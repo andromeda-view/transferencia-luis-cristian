@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transferencia Rápida</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f9fc;
+        }
+        #container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Transferencia Rápida</h1>
+        <p>Haz clic en el botón para copiar los datos de transferencia al portapapeles.</p>
+        <button id="copyButton">Copiar datos</button>
+    </div>
+    <script>
+        const transferData = `Nombre: LUIS CRISTIAN GONZALEZ FLORES
+RUT: 13715028-K
+Banco prepago Tenpo
+Tipo de cuenta: Cuenta Vista 
+Numero de cuenta: 111113715028
+Correo: cristiangonzalezflow9789@gmail.com`;
+
+        document.getElementById('copyButton').addEventListener('click', () => {
+            navigator.clipboard.writeText(transferData)
+                .then(() => alert('¡Datos copiados al portapapeles!'))
+                .catch(err => alert('Hubo un error al copiar los datos.'));
+        });
+    </script>
+</body>
+</html>
